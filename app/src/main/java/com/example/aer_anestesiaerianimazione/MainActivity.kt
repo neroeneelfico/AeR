@@ -6,6 +6,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
         val navView = findViewById<NavigationView>(R.id.navView)
-
+        val bottonnavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close)
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
@@ -31,6 +32,11 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+
+        bottonnavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+            }
+            true }
 
     }
 

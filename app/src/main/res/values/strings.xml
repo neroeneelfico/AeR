@@ -2,5 +2,7 @@
     <string name="app_name">AeR- Anestesia e Rianimazione</string>
     <string name="open">Apri</string>
     <string name="close">Chiudi</string>
+    <string name = "item1">pH</string>
+    <string name = "item2">Bicarbonati</string>
 
 </resources>
