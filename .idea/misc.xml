@@ -3,12 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/marce/AndroidStudioProjects/AeRAnestesiaeRianimazione/app/src/main/res/drawable-v24/ic_add.xml" value="0.39947916666666666" />
+        <entry key="..\:/Users/marce/AndroidStudioProjects/AeRAnestesiaeRianimazione/app/src/main/res/drawable-v24/ic_description.xml" value="0.525" />
+        <entry key="..\:/Users/marce/AndroidStudioProjects/AeRAnestesiaeRianimazione/app/src/main/res/drawable-v24/ic_file_download.xml" value="0.525" />
+        <entry key="..\:/Users/marce/AndroidStudioProjects/AeRAnestesiaeRianimazione/app/src/main/res/drawable-v24/ic_person.xml" value="0.525" />
+        <entry key="..\:/Users/marce/AndroidStudioProjects/AeRAnestesiaeRianimazione/app/src/main/res/drawable-v24/ic_shopping_basket.xml" value="0.525" />
+        <entry key="..\:/Users/marce/AndroidStudioProjects/AeRAnestesiaeRianimazione/app/src/main/res/drawable-v24/shape_circle.xml" value="0.525" />
+        <entry key="..\:/Users/marce/AndroidStudioProjects/AeRAnestesiaeRianimazione/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.5703125" />
         <entry key="..\:/Users/marce/AndroidStudioProjects/AeRAnestesiaeRianimazione/app/src/main/res/drawable/icon_1.xml" value="0.5703125" />
         <entry key="..\:/Users/marce/AndroidStudioProjects/AeRAnestesiaeRianimazione/app/src/main/res/layout/activity_main.xml" value="0.2695035460992908" />
+        <entry key="..\:/Users/marce/AndroidStudioProjects/AeRAnestesiaeRianimazione/app/src/main/res/layout/fragment_compensi.xml" value="0.3307291666666667" />
         <entry key="..\:/Users/marce/AndroidStudioProjects/AeRAnestesiaeRianimazione/app/src/main/res/layout/fragment_dettagli.xml" value="0.3307291666666667" />
         <entry key="..\:/Users/marce/AndroidStudioProjects/AeRAnestesiaeRianimazione/app/src/main/res/layout/fragment_inserimento.xml" value="0.3307291666666667" />
         <entry key="..\:/Users/marce/AndroidStudioProjects/AeRAnestesiaeRianimazione/app/src/main/res/layout/fragment_risultato.xml" value="0.3307291666666667" />
         <entry key="..\:/Users/marce/AndroidStudioProjects/AeRAnestesiaeRianimazione/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/marce/AndroidStudioProjects/AeRAnestesiaeRianimazione/app/src/main/res/mipmap-anydpi-v26/ic_kidney.xml" value="0.346875" />
+        <entry key="..\:/Users/marce/AndroidStudioProjects/AeRAnestesiaeRianimazione/app/src/main/res/mipmap-anydpi-v26/ic_kidney_round.xml" value="0.346875" />
       </map>
     </option>
   </component>

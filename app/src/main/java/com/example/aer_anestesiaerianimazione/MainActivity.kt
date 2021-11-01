@@ -1,8 +1,14 @@
 package com.example.aer_anestesiaerianimazione
 
+import android.app.Activity
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
+import android.widget.SeekBar
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
@@ -15,29 +21,46 @@ import androidx.viewpager.widget.ViewPager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.tabs.TabLayout
+import com.ramotion.fluidslider.FluidSlider
+import com.warkiz.widget.IndicatorSeekBar
+import com.warkiz.widget.OnSeekChangeListener
+import com.warkiz.widget.SeekParams
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var toggle: ActionBarDrawerToggle
     private lateinit var viewPager: ViewPager
+    var compensiadapter = MyViewPagerAdapter(supportFragmentManager)
+    lateinit var tabLayout : TabLayout
+    lateinit var phadapter : MyViewPagerAdapter
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
         val bottonnavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        val viewPager = findViewById<ViewPager>(R.id.view_pager)
-        val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
-        val phadapter = MyViewPagerAdapter(supportFragmentManager)
+        phadapter = MyViewPagerAdapter(supportFragmentManager)
         val hco3adapter = MyViewPagerAdapter(supportFragmentManager)
-        phadapter.addFragment(FragmentInserimento(),"Inserimento")
-        phadapter.addFragment(FragmentInserimento(),"Risultato")
-        phadapter.addFragment(FragmentInserimento(),"Dettagli")
+
+
+        tabLayout = findViewById(R.id.tab_layout)
+        viewPager = findViewById(R.id.view_pager)
+        val max = 45
+        val min = 10
+        val total = max - min
+
+
+
+        phadapter.addFragment(FragmentInserimento(),"Calcolo")
+        phadapter.addFragment(FragmentCompensi(),"Compensi")
+
+        compensiadapter.addFragment(FragmentInserimento(),"Calcolo")
 
         hco3adapter.addFragment(FragmentInserimento(),"Calcolo hco3")
         hco3adapter.addFragment(FragmentInserimento(),"Dettagli")
-
 
         viewPager.adapter = phadapter
         setSupportActionBar(toolbar)
@@ -62,6 +85,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
     class MyViewPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager, FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
         private val fragmentList : MutableList<Fragment> = ArrayList()
         private val titleList : MutableList<String> = ArrayList()
@@ -79,11 +103,26 @@ class MainActivity : AppCompatActivity() {
             titleList.add(title)
         }
 
+        fun addFragmentBundle(fragment: Fragment, title:String, co2:Float, hco3:Float){
+            val bundle = Bundle()
+            bundle.putFloat("co2",co2)
+            bundle.putFloat("hco3",hco3)
+            fragment.arguments = bundle
+            fragmentList[1] = fragment
+            //fragmentList.add(fragment)
+           // titleList.add(title)
+            Log.i("MainActivity","Arrivato")
+
+        }
+
         fun resetFragment(){
             fragmentList.clear()
             fragmentList.removeAt(0)
             titleList.clear()
             titleList.removeAt(0)
+        }
+        fun aggiornaCompensi(tipo : String, co2:Float){
+            (fragmentList[1] as FragmentCompensi).aggiornaCompensi(tipo, co2)
         }
 
         override fun getPageTitle(position: Int): CharSequence? {
@@ -91,6 +130,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
 
 
 }
